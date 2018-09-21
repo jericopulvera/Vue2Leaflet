@@ -28,6 +28,10 @@ const props = {
     type: Boolean,
     custom: true,
     default: true
+  },
+  zIndex: {
+    type: Number,
+    default: 1,
   }
 };
 
@@ -39,7 +43,8 @@ export default {
       opacity: this.opacity,
       alt: this.alt,
       interactive: this.interactive,
-      crossOrigin: this.crossOrigin
+      crossOrigin: this.crossOrigin,
+      zIndex: this.zIndex
     };
     this.mapObject = L.imageOverlay(this.url, this.bounds, options);
     L.DomEvent.on(this.mapObject, this.$listeners);
